@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+     # 基本属性 url、user、password
+    url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: root123
+    type:  com.alibaba.druid.pool.DruidDataSource
+
+
+    
+       
+mybatis:
+  #sql映射位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+   #实体类位置
+  type-aliases-package: com.malin.forum.model
+
+pagehelper:
+  reasonable: true
+  helper-dialect: mysql
+  support-methods-arguments: true
+  params: count =countSql
+  
+logging:
+  level:
+        com.malin.forum.mapper : debug
